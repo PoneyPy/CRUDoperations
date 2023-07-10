@@ -1,0 +1,8 @@
+<div class="sidebar">
+  <img src="assets/keevo.png">
+  <span>Controle de Estoque</span>
+  <div class="uul">
+    <a [class.active]="isActive('home')" (click)="setActive('home')" href="#home"><i class="uil uil-estate"></i>Home</a>
+    <a [class.active]="isActive('add')" (click)="setActive('add')" routerLink="/add"><i class="uil uil-plus-circle"></i>Adicionar</a>
+  </div>
+</div>

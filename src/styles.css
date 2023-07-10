@@ -1,0 +1,8 @@
+body {
+  overflow: hidden;
+  background-color: #13111c;
+  opacity: 1;
+  background-image:  radial-gradient(#595860 1.55px, transparent 1.55px), radial-gradient(#595860 1.55px, #13111c 1.55px);
+  background-size: 62px 62px;
+  background-position: 0 0,31px 31px;
+}

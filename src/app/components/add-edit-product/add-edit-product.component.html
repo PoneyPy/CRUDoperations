@@ -1,0 +1,42 @@
+<app-progress-bar *ng-If="loading"></app-progress-bar>
+<div class="card text-white bg-dark mb-3" style="max-width: 25rem; margin-top: 5%;">
+
+     <div class="card-header text-center"> <h4> {{ operacion }} produto </h4></div>
+      <div class="card-body">
+
+        <form [formGroup]="form" id="products-form" (ngSubmit)="addProduct()">
+            <div class="input-container mt-2">
+                <label for="nome" class="fw-medium">Nome do produto</label>
+                <input formControlName="name" class="form-control" type="text" id="nome" name="nome" placeholder="Digite o nome do produto">
+                    <span *ngIf="form.get('name')?.hasError('required') && form.get('name')?.touched" class="ms-2">Campo <strong>obrigatório</strong></span>
+            </div>
+            <div class="input-container mt-2">
+                <label for="descricao" class="fw-medium">Descricao do produto</label>
+                <input formControlName="description" class="form-control" type="text" id="descricao" name="descricao" placeholder="Digite a descrição do produto">
+                <span *ngIf="form.get('description')?.hasError('required') && form.get('description')?.touched" class="ms-2">Campo <strong>obrigatório</strong></span>
+            </div>
+            <div class="input-container mt-2">
+                <label for="unidade" class="fw-medium">Unidade de medida do produto</label>
+                <select formControlName="unit" class="form-select" name="unidade" id="unidade">
+                    <option value="">Selecione a unidade de medida</option>
+                    <option value="Unidade">Unidade</option>
+                    <option value="Peça">Peça</option>
+                    <option value="Item">Item</option>
+                    <option value="Litro">Litro</option>
+                    <option value="Quilograma">Quilograma</option>
+                    <option value="Caixa">Caixa</option>
+                    <option value="Kit">Kit</option>
+                </select>
+                <span *ngIf="form.get('unit')?.hasError('required') && form.get('unit')?.touched" class="ms-2">Campo <strong>obrigatório</strong></span>
+            </div>
+            <div class="input-container mt-2">
+                <label for="quantidade" class="fw-medium">Quantidade do produto</label>
+                <input formControlName="stock" class="form-control" type="number" id="quantidade" name="quantidade" placeholder="Insira a quantidade do produto">
+                <span *ngIf="form.get('stock')?.hasError('required') && form.get('stock')?.touched" class="ms-2">Campo <strong>obrigatório</strong></span>
+            </div>
+            <div class="input-container mt-2">
+                <input [disabled]="form.invalid" type="submit" class="btn btn-light" value="Adicionar" style="background-color: transparent; color: #fff;">
+            </div>
+        </form>
+        
+</div>

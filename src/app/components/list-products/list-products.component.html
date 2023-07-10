@@ -1,0 +1,35 @@
+<app-progress-bar *ng-If="loading"></app-progress-bar>
+<div class="container" style="padding: 1px 16px;">
+  <div class="d-flex justify-content-between mt-5 mb-5">
+      <h2>Produtos</h2>
+  </div> 
+
+  <div class="table-container">
+    <table *ngIf="listProducts.length > 0" class="table">
+      <thead>
+        <tr>
+          <th class="rounded-top-left" scope="col">Id</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Descrição</th>
+          <th scope="col">Unidade de medida</th>
+          <th scope="col">Estoque</th>
+          <th class="rounded-top-right" scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of listProducts">
+          <th scope="row" class="rounded-bottom-left">{{ item.id }}</th>
+          <td> {{ item.name }} </td>
+          <td> {{ item.description }} </td>
+          <td> {{ item.unit }} </td>
+          <td> {{ item.stock}} </td>
+          <td style="max-width: 75px;" class="rounded-bottom-right">
+            <button type="button" class="btn btn-primary btn-sm" routerLink="/edit/{{ item.id }}"><i class="uil uil-edit-alt"></i></button>
+            <button (click)="deleteProduct(item.id!)" type="button" class="btn btn-secondary btn-sm"><i class="uil uil-trash-alt"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>    
+    <h5 *ngIf="listProducts.length ==  0">Não tem produtos para mostar</h5>
+  </div>
+</div>

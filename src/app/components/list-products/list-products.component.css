@@ -1,0 +1,65 @@
+h2, h4, h5 {
+    color: #fff;
+}
+
+th, td {
+    background-color: #212529;
+}
+
+.table {
+    border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  }
+
+  .table th,
+.table td {
+ color: #FFFFFF;
+  border: none;
+  border-bottom: 1px solid #b0a46c; 
+}
+
+.rounded-top-left {
+    border-top-left-radius: 10px;
+  }
+  
+  .rounded-top-right {
+    border-top-right-radius: 10px;
+  }
+
+.container {
+    margin: 0 auto; 
+    max-width: calc(100% - 200px); 
+    margin-left: 300px;
+    
+    @media screen and (max-width:750px) {
+        max-width: calc(100% - 100px); 
+        margin-left: 50px;
+    }
+    @media screen and (max-width: 630px) {
+        max-width: calc(100% - 10px); 
+        margin-left: 0px;
+    }
+}
+
+button {
+    margin-left: 0.5rem!important;
+}
+
+button {
+    @media screen and (max-width: 550px) {
+        margin-left: 0px;
+    }
+}
+
+
+.table-container {
+    max-width: calc(100% - 200px); /* Define a largura máxima descontando a largura da barra lateral */
+
+    @media screen and (max-width: 750px) {
+        max-width: 100%; /* Ajusta a largura máxima para ocupar a largura total */
+    }
+    
+}
+
