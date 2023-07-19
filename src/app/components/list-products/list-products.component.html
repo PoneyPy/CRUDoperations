@@ -24,7 +24,7 @@
           <td> {{ item.unit }} </td>
           <td> {{ item.stock}} </td>
           <td style="max-width: 75px;" class="rounded-bottom-right">
-            <button type="button" class="btn btn-primary btn-sm" routerLink="/edit/{{ item.id }}"><i class="uil uil-edit-alt"></i></button>
+            <button type="button" class="btn btn-primary btn-sm" (click)="editProduct(item)" [routerLink]="['/edit', item.id]"><i class="uil uil-edit-alt"></i></button>
             <button (click)="deleteProduct(item.id!)" type="button" class="btn btn-secondary btn-sm"><i class="uil uil-trash-alt"></i></button>
           </td>
         </tr>

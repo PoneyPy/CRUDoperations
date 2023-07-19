@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/interfaces/product';
 import { ProductService } from 'src/app/services/product.service';
+import { SharedDataService } from 'src/app/services/shared-data.service';
 
 @Component({
   selector: 'app-list-products',
@@ -9,10 +10,18 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./list-products.component.css']
 })
 export class ListProductsComponent {
-  listProducts: Product[] = [] 
-  loading: boolean = false
+  listProducts: Product[] = [];
+  loading: boolean = false;
 
-  constructor(private _productService: ProductService, private toastr: ToastrService) { }
+  constructor(
+    private _productService: ProductService,
+    private toastr: ToastrService,
+    private sharedDataService: SharedDataService
+  ) { }
+
+  editProduct(product: Product) {
+    this.sharedDataService.setSelectedProduct(product);
+  }
 
   ngOnInit(): void {
     this.getListProducts();
